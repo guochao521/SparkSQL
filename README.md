@@ -144,11 +144,68 @@ windows执行：
 </br>
 执行结果
 </center>
-
-
-
- ### 链接参考：
+#### 链接参考：
 
 - https://xie.infoq.cn/article/4512f8861d882a1da512084d9
 - https://blog.csdn.net/nzbing/article/details/124653021
 
+
+
+### 2. 构建 SQL 满足如下要求
+
+通过 set spark.sql.planChangeLog.level=WARN; 查看
+
+1.  构建一条SQL，同时 apply 下面三条优化规则：  
+
+   - CombineFilters
+
+   - CollapseProject
+   - BooleanSimlification
+
+2. 构建一条SQL，同时 apply 下面五条优化规则：
+
+   - ConstantFloding
+   - PushDownPredicates
+   - ReplaceDistinctWithAggregate
+   - ReplaceExceptWithAntJoin
+   - FoldablePropagation
+
+#### 2.1 题1，应用三条优化规则
+
+```sql
+CREATE TABLE t1(a1 INT, a2 INT) USING parquet;
+
+SELECT a11, (a2+1) AS a21
+FROM (
+	SELECT (a1 +1) AS a11, a2 FROM t1 WHERE a1>10
+) WHERE a11>1 AND 1=1;
+```
+
+
+
+#### 2.2 题2，应用五条优化规则
+
+```sql
+CREATE TABLE t1(a1 INT, a2 INT) USING parquet;
+CREATE TABLE t2(b1 INT, b2 INT) USING parquet;
+
+SELECT DISTINCT a1, a2, 'custom' a3
+FROM (
+	SELECT * FROM t1 WHERE a2=10 AND 1=1
+) WHERE a1>5 AND 1=1
+EXCEPT SELECT b1, b2, 1.0 b3 FROM t2 WHERE b2=10;
+```
+
+
+
+### 3. 实现自定义优化规则（静默规则）
+
+见代码：package spak.sql
+
+
+
+### 参考连接
+
+- https://xie.infoq.cn/article/4512f8861d882a1da512084d9
+
+- https://xie.infoq.cn/article/6f8ca37044dce47facfee7ae0
