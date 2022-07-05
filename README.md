@@ -170,6 +170,44 @@ windows执行：
    - ReplaceExceptWithAntJoin
    - FoldablePropagation
 
+#### 准备工作
+
+数据源：finances-small.json
+
+```json
+{"ID":1,"Account":{"Number":"123-ABC-789","FirstName":"Jay","LastName":"Smith"},"Date":"1/1/2015","Amount":1.23,"Description":"Drug Store"},
+{"ID":2,"Account":{"Number":"456-DEF-456","FirstName":"Sally","LastName":"Fuller"},"Date":"1/3/2015","Amount":200.00,"Description":"Electronics"},
+{"ID":3,"Account":{"Number":"333-XYZ-999","FirstName":"Brad","LastName":"Turner"},"Date":"1/4/2015","Amount":106.00,"Description":"Gas},
+{"ID":4,"Account":{"Number":"987-CBA-321","FirstName":"Justin","LastName":"Pihony"},"Date":"1/4/2015","Amount":0.00,"Description":"Drug Store"}
+...
+```
+
+
+
+导入数据：
+
+```shell
+1、在HDFS 上创建多级目录
+hdfs dfs -mkdir -p /home/student5/wangguochao/datasource
+
+2、上传数据
+hdfs dfs -put /home/student5/wangguochao/04_spark/finances-small.json /home/student5/wangguochao/datasource
+```
+
+
+
+创建视图：
+
+```sql
+spark-sql> CREATE TEMPORARY TABLE finance USING org.apache.spark.sql.json  OPTIONS (path '/home/student5/wangguochao/datasource/finances-small.json');
+22/07/05 11:01:32 WARN [main] SparkSqlAstBuilder: CREATE TEMPORARY TABLE ... USING ... is deprecated, please use CREATE TEMPORARY VIEW ... USING ... instead
+Time taken: 2.987 seconds
+```
+
+
+
+
+
 #### 2.1 题1，应用三条优化规则
 
 ```sql

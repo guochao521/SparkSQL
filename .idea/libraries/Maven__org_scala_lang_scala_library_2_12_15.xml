@@ -2,20 +2,20 @@
   <library name="Maven: org.scala-lang:scala-library:2.12.15" type="Scala">
     <properties>
       <compiler-classpath>
-        <root url="file://$PROJECT_DIR$/../../../Tools/apache-maven-3.6.3/LocalWarehouse/org/scala-lang/scala-compiler/2.12.15/scala-compiler-2.12.15.jar" />
-        <root url="file://$PROJECT_DIR$/../../../Tools/apache-maven-3.6.3/LocalWarehouse/org/scala-lang/scala-library/2.12.15/scala-library-2.12.15.jar" />
-        <root url="file://$PROJECT_DIR$/../../../Tools/apache-maven-3.6.3/LocalWarehouse/org/scala-lang/scala-reflect/2.12.15/scala-reflect-2.12.15.jar" />
-        <root url="file://$PROJECT_DIR$/../../../Tools/apache-maven-3.6.3/LocalWarehouse/org/scala-lang/modules/scala-xml_2.12/1.0.6/scala-xml_2.12-1.0.6.jar" />
+        <root url="file://$PROJECT_DIR$/../../Tools/maven/apache-maven-3.6.3/localRepository/org/scala-lang/scala-compiler/2.12.15/scala-compiler-2.12.15.jar" />
+        <root url="file://$PROJECT_DIR$/../../Tools/maven/apache-maven-3.6.3/localRepository/org/scala-lang/scala-library/2.12.15/scala-library-2.12.15.jar" />
+        <root url="file://$PROJECT_DIR$/../../Tools/maven/apache-maven-3.6.3/localRepository/org/scala-lang/scala-reflect/2.12.15/scala-reflect-2.12.15.jar" />
+        <root url="file://$PROJECT_DIR$/../../Tools/maven/apache-maven-3.6.3/localRepository/org/scala-lang/modules/scala-xml_2.12/1.0.6/scala-xml_2.12-1.0.6.jar" />
       </compiler-classpath>
     </properties>
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../../../Tools/apache-maven-3.6.3/LocalWarehouse/org/scala-lang/scala-library/2.12.15/scala-library-2.12.15.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../Tools/maven/apache-maven-3.6.3/localRepository/org/scala-lang/scala-library/2.12.15/scala-library-2.12.15.jar!/" />
     </CLASSES>
     <JAVADOC>
-      <root url="jar://$PROJECT_DIR$/../../../Tools/apache-maven-3.6.3/LocalWarehouse/org/scala-lang/scala-library/2.12.15/scala-library-2.12.15-javadoc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../Tools/maven/apache-maven-3.6.3/localRepository/org/scala-lang/scala-library/2.12.15/scala-library-2.12.15-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
-      <root url="jar://$PROJECT_DIR$/../../../Tools/apache-maven-3.6.3/LocalWarehouse/org/scala-lang/scala-library/2.12.15/scala-library-2.12.15-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../Tools/maven/apache-maven-3.6.3/localRepository/org/scala-lang/scala-library/2.12.15/scala-library-2.12.15-sources.jar!/" />
     </SOURCES>
   </library>
 </component>
